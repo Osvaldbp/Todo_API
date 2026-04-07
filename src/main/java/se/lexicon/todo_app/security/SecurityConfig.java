@@ -34,7 +34,6 @@ import org.springframework.web.filter.CorsFilter;
         jsr250Enabled = true,
         prePostEnabled = true
 )
-
 public class SecurityConfig {
 
 
@@ -55,7 +54,7 @@ public class SecurityConfig {
                 // Configure URL-based security rules
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()           // Allow public access to auth endpoints
-                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll() // Allow access to API documentation
+                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()// Allow access to API documentation
                         .anyRequest().authenticated()                          // Require authentication for all other requests
                 )
                 // Configure session management
